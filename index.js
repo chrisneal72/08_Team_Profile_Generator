@@ -83,7 +83,6 @@ const internQuestions = [
 async function init() {
     try {
         const response = await inquirer.prompt(managerQuestions);
-        console.log(Object.keys(response).map(function (k) { return response[k] }).join(","));
         teamMembers.push(new Manager(response.name, response.id, response.email, response.officeNumber));
         let moreTeam = true;
         while (moreTeam) {
@@ -93,20 +92,16 @@ async function init() {
                 name: "memberType",
                 choices: ["Engineer", "Intern", "No other team members to add"]
             });
-            console.log(memberType.memberType)
             if (memberType.memberType === "Engineer") {
                 const res = await inquirer.prompt(engineerQuestions);
-                console.log(Object.keys(res).map(function (k) { return res[k] }).join(","));
                 teamMembers.push(new Engineer(res.name, res.id, res.email, res.github));
             } else if (memberType.memberType === "Intern") {
                 const res = await inquirer.prompt(internQuestions);
-                console.log(Object.keys(res).map(function (k) { return res[k] }).join(","));
                 teamMembers.push(new Intern(res.name, res.id, res.email, res.school));
             } else {
                 moreTeam = !moreTeam;
             }
         }
-        console.log(teamMembers);
         render(teamMembers);
     } catch (err) {
         console.log(err);
