@@ -15,7 +15,7 @@ This assignment is a software engineering team generator command line applicatio
 ​
 ### Screenshots
 ​
-![Image](assets/images/run.gif)
+![Image](assets/images/testing.jpg)
 ​
 ### Link
 Check it out! 
