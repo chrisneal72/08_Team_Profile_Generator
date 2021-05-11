@@ -13,7 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "i": "^0.3.6",
-    "inquirer": "^7.3.3"
+    "inquirer": "^7.3.3",
+    "node-notifier": "^9.0.1"
   },
   "devDependencies": {
     "jest": "^26.4.0"
